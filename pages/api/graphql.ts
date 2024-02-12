@@ -1,4 +1,6 @@
 import { createServer } from "@graphql-yoga/node";
+import { EventService } from "../service/eventService";
+import { Event } from "./types";
 
 const typeDefs = /* GraphQL */ `
   type Event {
@@ -15,39 +17,8 @@ const typeDefs = /* GraphQL */ `
 
 const resolvers = {
   Query: {
-    async events() {
-      return [
-        {
-          id: "1",
-          title: "Meeting with Claire",
-          start: 780,
-          end: 840,
-        },
-        {
-          id: "2",
-          title: "Interview Ahmed",
-          start: 850,
-          end: 880,
-        },
-        {
-          id: "3",
-          title: "Review OKRs",
-          start: 870,
-          end: 900,
-        },
-        {
-          id: "4",
-          title: "Call with Bob",
-          start: 420,
-          end: 440,
-        },
-        {
-          id: "5",
-          title: "Lunch",
-          start: 720,
-          end: 780,
-        },
-      ];
+    async events(parent, input, { eventService }) {
+      return await eventService.readDataFromFile();
     },
   },
 };
@@ -58,6 +29,9 @@ const server = createServer({
     resolvers,
   },
   endpoint: "/api/graphql",
+  context: {
+    eventService: new EventService<Event>("./pages/service/data.json"),
+  },
 });
 
 export default server;

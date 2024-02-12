@@ -6,8 +6,6 @@ type EventsProps = {
   events: Event[];
 };
 
-const MINUTES_PER_DAY = 1440;
-
 type EventProps = {
   event: Event;
   column: number;

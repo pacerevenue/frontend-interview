@@ -1,7 +1,4 @@
-import React, {
-  Fragment,
-  FunctionComponent,
-} from "react";
+import React, { Fragment, FunctionComponent } from "react";
 
 type LayoutProps = {
   children: JSX.Element;

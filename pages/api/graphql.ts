@@ -13,12 +13,29 @@ const typeDefs = /* GraphQL */ `
   type Query {
     events: [Event!]!
   }
+
+  input InputEvent {
+    title: String!
+    start: String!
+    end: String!
+  }
+
+  type Mutation {
+    addEvent(inputEvent: InputEvent): Boolean!
+  }
 `;
 
 const resolvers = {
   Query: {
     async events(parent, input, { eventService }) {
       return await eventService.readDataFromFile();
+    },
+  },
+  Mutation: {
+    async addEvent(parent, { inputEvent }, { eventService }) {
+      await eventService.saveDataToFile(inputEvent);
+
+      return true;
     },
   },
 };

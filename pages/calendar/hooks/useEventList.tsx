@@ -7,8 +7,8 @@ const GET_EVENT_QUERY = `
     events {
       id
       title
-      start
-      end
+      startTime
+      endTime
     }
   }
 `;

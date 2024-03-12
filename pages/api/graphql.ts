@@ -6,8 +6,8 @@ const typeDefs = /* GraphQL */ `
   type Event {
     id: ID!
     title: String!
-    start: Int!
-    end: Int!
+    startTime: Int!
+    endTime: Int!
   }
 
   type Query {

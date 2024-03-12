@@ -12,14 +12,14 @@ type EventProps = {
 };
 
 const EventComponent: FunctionComponent<EventProps> = ({
-  event: { id, title, start, end },
+  event: { id, title, startTime, endTime },
   column,
 }) => {
   return (
     <div
       key={id}
       className={`grid row-start-1 col-start-${column} col-end-${column + 1}`}
-      style={{ height: end - start, marginTop: start }}
+      style={{ height: endTime - startTime, marginTop: startTime }}
     >
       <div
         className={`

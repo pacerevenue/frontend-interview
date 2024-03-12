@@ -43,7 +43,9 @@ export class EventService<T> {
     try {
       const fileContent = await fsPromises.readFile(this.filePath, "utf-8");
       const sanitizedJsonString = fileContent.replace(/\\n/g, "");
-      return this._parsedJSONData(JSON.parse(sanitizedJsonString));
+      return this._parsedJSONData(JSON.parse(sanitizedJsonString)).sort(
+        (a, b) => a.startTime - b.startTime
+      );
     } catch (error) {
       console.error(`Error reading data from file: ${error.message}`);
       return null;

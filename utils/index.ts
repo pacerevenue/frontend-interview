@@ -19,7 +19,7 @@ export const getGroupedEvents = (eventsData: Event[]) => {
       if (!groups[j]) {
         groups[j] = [event];
         break;
-      } else if (event.start >= groups[j].at(-1).end) {
+      } else if (event.startTime >= groups[j].at(-1).endTime) {
         groups[j].push(event);
         break;
       }

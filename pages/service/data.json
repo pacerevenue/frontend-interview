@@ -2,40 +2,40 @@
   {
     "id": "1",
     "title": "Meeting with Claire",
-    "start": 780,
-    "end": 840,
+    "startTime": 780,
+    "endTime": 840,
     "date": "2022-01-01",
     "description": "Some description"
   },
   {
     "id": "2",
     "title": "Interview Ahmed",
-    "start": 850,
-    "end": 880,
+    "startTime": 850,
+    "endTime": 880,
     "date": "2022-01-01",
     "description": "Some description"
   },
   {
     "id": "3",
     "title": "Review OKRs",
-    "start": 870,
-    "end": 900,
+    "startTime": 870,
+    "endTime": 900,
     "date": "2022-01-01",
     "description": "Some description"
   },
   {
     "id": "4",
     "title": "Call with Bob",
-    "start": 420,
-    "end": 440,
+    "startTime": 420,
+    "endTime": 440,
     "date": "2022-01-01",
     "description": "Some description"
   },
   {
     "id": "5",
     "title": "Lunch",
-    "start": 720,
-    "end": 780,
+    "startTime": 720,
+    "endTime": 780,
     "date": "2022-01-01",
     "description": "Some description"
   }

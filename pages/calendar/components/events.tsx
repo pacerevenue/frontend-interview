@@ -1,13 +1,13 @@
 import { FunctionComponent } from "react";
 import { getGroupedEvents } from "../../../utils";
-import { Event } from "../../api/types";
+import { CalendarEvent } from "../../api/types";
 
 type EventsProps = {
-  events: Event[];
+  events: CalendarEvent[];
 };
 
 type EventProps = {
-  event: Event;
+  event: CalendarEvent;
   column: number;
 };
 

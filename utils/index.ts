@@ -1,4 +1,4 @@
-import { Event } from "../pages/api/types";
+import { CalendarEvent } from "../pages/api/types";
 
 /**
  *
@@ -9,9 +9,13 @@ import { Event } from "../pages/api/types";
  * We decided to use a greedy algorithm to group events.
  * This is a simple algorithm that should produce optimal solution for scheduling problems.
  */
-export const getGroupedEvents = (eventsData: Event[]) => {
-  let events = [...eventsData];
-  const groups: Event[][] = [];
+export const getGroupedEvents = (eventsData: CalendarEvent[]) => {
+  const sortedByTimeEvents = [...eventsData].sort(
+    (a, b) => a.startTime - b.startTime
+  );
+
+  let events = [...sortedByTimeEvents];
+  const groups: CalendarEvent[][] = [];
 
   while (events.length > 0) {
     const event = events.shift();

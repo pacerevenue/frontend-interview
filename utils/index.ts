@@ -10,11 +10,9 @@ import { CalendarEvent } from "../pages/api/types";
  * This is a simple algorithm that should produce optimal solution for scheduling problems.
  */
 export const getGroupedEvents = (eventsData: CalendarEvent[]) => {
-  const sortedByTimeEvents = [...eventsData].sort(
+  const events = [...eventsData].sort(
     (a, b) => a.startTime - b.startTime
   );
-
-  let events = [...sortedByTimeEvents];
   const groups: CalendarEvent[][] = [];
 
   while (events.length > 0) {

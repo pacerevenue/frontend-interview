@@ -1,13 +1,13 @@
 import { createServer } from "@graphql-yoga/node";
 import { EventService } from "../service/eventService";
-import { Event } from "./types";
+import { CalendarEvent } from "./types";
 
 const typeDefs = /* GraphQL */ `
   type Event {
     id: ID!
     title: String!
-    start: Int!
-    end: Int!
+    startTime: Int!
+    endTime: Int!
   }
 
   type Query {
@@ -30,7 +30,7 @@ const server = createServer({
   },
   endpoint: "/api/graphql",
   context: {
-    eventService: new EventService<Event>("./pages/service/data.json"),
+    eventService: new EventService<CalendarEvent>("./pages/service/data.json"),
   },
 });
 

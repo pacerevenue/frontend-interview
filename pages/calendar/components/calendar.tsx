@@ -11,7 +11,7 @@ type CalendarProps = {
 export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <div className="flex flex-col m-4 sm:m-16 mb-8">
-      <h1 className="ml-12 my-8 text-2xl font-bold">3rd November 2022</h1>
+      <h1 className="ml-12 my-8 text-2xl font-bold">1st January 2022</h1>
       {children}
     </div>
   );

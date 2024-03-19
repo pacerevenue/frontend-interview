@@ -9,12 +9,11 @@ export default function CalendarPage() {
   if (!data) return <div>Loading...</div>;
 
   const { events } = data;
-  const eventsList = events.sort((a, b) => a.start - b.start);
 
   return (
     <Layout>
       <Calendar>
-        <Events events={eventsList} />
+        <Events events={events} />
       </Calendar>
     </Layout>
   );

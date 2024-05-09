@@ -1,25 +1,25 @@
 import { FunctionComponent } from "react";
 import { getGroupedEvents } from "../../../utils";
-import { Event } from "../../api/types";
+import { CalendarEvent } from "../../api/types";
 
 type EventsProps = {
-  events: Event[];
+  events: CalendarEvent[];
 };
 
 type EventProps = {
-  event: Event;
+  event: CalendarEvent;
   column: number;
 };
 
 const EventComponent: FunctionComponent<EventProps> = ({
-  event: { id, title, start, end },
+  event: { id, title, startTime, endTime },
   column,
 }) => {
   return (
     <div
       key={id}
       className={`grid row-start-1 col-start-${column} col-end-${column + 1}`}
-      style={{ height: end - start, marginTop: start }}
+      style={{ height: endTime - startTime, marginTop: startTime }}
     >
       <div
         className={`

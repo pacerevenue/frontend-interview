@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Event } from "../../api/types";
+import { CalendarEvent } from "../../api/types";
 import { client } from "./client";
 
 const GET_EVENT_QUERY = `
@@ -7,14 +7,14 @@ const GET_EVENT_QUERY = `
     events {
       id
       title
-      start
-      end
+      startTime
+      endTime
     }
   }
 `;
 
 export const useEventData = () => {
-  const [data, setData] = useState<{ events: Event[] } | null>(null);
+  const [data, setData] = useState<{ events: CalendarEvent[] } | null>(null);
   const [error, setError] = useState<Error | null>(null);
 
   const fetchEventData = async () => {
